@@ -1,0 +1,38 @@
+<phyphox xmlns="https://phyphox.org/xml" version="1.18">
+  <title>03 - Optimizing data throughput</title>
+  <category>AppBoard debug</category>
+  <color>007600</color>
+  <description>Plots accelerometer data that was packed</description>
+  <data-containers>
+    <container size="0">Output 1</container>
+    <container size="0">Output 2</container>
+    <container size="0">Output 3</container>
+  </data-containers>
+  <input>
+    <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" mode="notification" rate="1">
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian">Output 1</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2">Output 2</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4">Output 3</output>
+    </bluetooth>
+  </input>
+  <views>
+    <view label="Accelerometer">
+      <graph label="acc x" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">Output 1</input>
+      </graph>
+      <graph label="acc y" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">Output 2</input>
+      </graph>
+      <graph label="acc z" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">Output 3</input>
+      </graph>
+    </view>
+  </views>
+  <export>
+    <set name="Accelerometer">
+      <data name="acc x [LSB]">Output 1</data>
+      <data name="acc y [LSB]">Output 2</data>
+      <data name="acc z [LSB]">Output 3</data>
+    </set>
+  </export>
+</phyphox>
