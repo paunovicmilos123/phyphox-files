@@ -10,9 +10,9 @@
   </data-containers>
   <input>
     <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" mode="notification" rate="1">
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="4">Output 1</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="4">Output 2</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="4">Output 3</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="6">Output 1</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="6">Output 2</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="6">Output 3</output>
     </bluetooth>
   </input>
   <views>
