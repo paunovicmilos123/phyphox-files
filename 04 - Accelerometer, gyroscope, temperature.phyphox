@@ -13,7 +13,6 @@
     <container size="0">Output 6</container>
     <container size="0">Output 7</container>
     <container size="0">Output 10</container>
-    <container size="0">d_sensor_time</container>
   </data-containers>
   <input>
     <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification" rate="1">
@@ -28,12 +27,6 @@
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int32LittleEndian" offset="14">Output 10</output>
     </bluetooth>
   </input>
-  <analysis>
-    <formula formula="[1] - [1_]">
-      <input keep="true">Output 10</input>
-      <output append="true">d_sensor_time</output>
-    </formula>
-  </analysis>
   <views>
     <view label="Accelerometer">
       <graph label="acc x" aspectRatio="2.5" color="ff7e22">
@@ -71,7 +64,7 @@
     </view>
     <view label="sensor time derivative">
       <graph label="">
-        <input axis="y">d_sensor_time</input>
+        <input axis="y">Output 10</input>
       </graph>
     </view>
   </views>
