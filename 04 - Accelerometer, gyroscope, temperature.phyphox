@@ -1,5 +1,6 @@
 <phyphox xmlns="https://phyphox.org/xml" version="1.18">
   <title>04 - Accelerometer, gyroscope, temperature</title>
+  <color>007600</color>
   <category>AppBoard debug</category>
   <description>Plots accelerometer data, gyroscope data, and temperature data against sensor time sent from the App Board, the data is stored and then sent with MTU sized packets to increase throughtput</description>
   <data-containers>
