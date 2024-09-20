@@ -13,20 +13,27 @@
     <container size="0">Output 6</container>
     <container size="0">Output 7</container>
     <container size="0">Output 10</container>
+    <container size="0">d_sensor_time</container>
   </data-containers>
   <input>
     <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification" rate="1">
       <config char="6e400002-b5a3-f393-e0a9-e50e24dcca9e" conversion="hexadecimal">0930</config>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="18">Output 1</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="18">Output 2</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="18">Output 3</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6" repeating="18">Output 4</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8" repeating="18">Output 5</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10" repeating="18">Output 6</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12" repeating="18">Output 7</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int32LittleEndian" offset="14" repeating="18">Output 10</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian">Output 1</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2">Output 2</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4">Output 3</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6">Output 4</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8">Output 5</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10">Output 6</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12">Output 7</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int32LittleEndian" offset="14">Output 10</output>
     </bluetooth>
   </input>
+  <analysis>
+    <differentiate>
+      <input as="in" keep="true">Output 10</input>
+      <output append="true">d_sensor_time</output>
+    </differentiate>
+  </analysis>
   <views>
     <view label="Accelerometer">
       <graph label="acc x" aspectRatio="2.5" color="ff7e22">
@@ -60,6 +67,11 @@
       <graph label="temperature" aspectRatio="2.5" color="ff7e22">
         <input axis="x">Output 10</input>
         <input axis="y">Output 7</input>
+      </graph>
+    </view>
+    <view label="sensor time derivative">
+      <graph label="">
+        <input axis="y">d_sensor_time</input>
       </graph>
     </view>
   </views>
