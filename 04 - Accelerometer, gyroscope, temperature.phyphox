@@ -17,14 +17,14 @@
   <input>
     <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification" rate="1">
       <config char="6e400002-b5a3-f393-e0a9-e50e24dcca9e" conversion="hexadecimal">0930</config>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="18">Output 1</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="18">Output 2</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="18">Output 3</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6" repeating="18">Output 4</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8" repeating="18">Output 5</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10" repeating="18">Output 6</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12" repeating="18">Output 7</output>
-      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int32LittleEndian" offset="14" repeating="18">Output 10</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="16">Output 1</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="16">Output 2</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="16">Output 3</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6" repeating="16">Output 4</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8" repeating="16">Output 5</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10" repeating="16">Output 6</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12" repeating="16">Output 7</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="14" repeating="16">Output 10</output>
     </bluetooth>
   </input>
   <views>
