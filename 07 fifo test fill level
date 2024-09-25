@@ -65,7 +65,7 @@
   </views>
   <export>
     <set name="Fill level">
-      <data name=fifo fill level[W]">fill level</data>
+      <data name="fifo fill level[W]">fill level</data>
     </set>
     <set name="Accelerometer">
       <data name="acc x [LSB]">Output 1</data>
