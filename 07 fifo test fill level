@@ -37,35 +37,28 @@
     </view>
     <view label="Accelerometer">
       <graph label="acc x" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 1</input>
       </graph>
       <graph label="acc y" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 2</input>
       </graph>
       <graph label="acc z" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 3</input>
       </graph>
     </view>
     <view label="Gyroscope">
       <graph label="gyr x" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 4</input>
       </graph>
       <graph label="gyr y" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 5</input>
       </graph>
       <graph label="gyr z" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 6</input>
       </graph>
     </view>
     <view label="Temperature">
       <graph label="temperature" aspectRatio="2.5" color="ff7e22">
-        <input axis="x">Output 10</input>
         <input axis="y">Output 7</input>
       </graph>
     </view>
