@@ -1,0 +1,84 @@
+<phyphox xmlns="https://phyphox.org/xml" version="1.18">
+  <title>06 - FIFO + Flash</title>
+  <color>007600</color>
+  <category>AppBoard debug</category>
+  <description></description>
+  <data-containers>
+    <container size="0">z</container>
+    <container size="0">Output 1</container>
+    <container size="0">Output 2</container>
+    <container size="0">Output 3</container>
+    <container size="0">Output 4</container>
+    <container size="0">Output 5</container>
+    <container size="0">Output 6</container>
+    <container size="0">Output 7</container>
+    <container size="0">Output 10</container>
+  </data-containers>
+  <input>
+    <bluetooth uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification" rate="1">
+      <config char="6e400002-b5a3-f393-e0a9-e50e24dcca9e" conversion="hexadecimal">0930</config>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" repeating="16">Output 1</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="16">Output 2</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="16">Output 3</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6" repeating="16">Output 4</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8" repeating="16">Output 5</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10" repeating="16">Output 6</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12" repeating="16">Output 7</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="14" repeating="16">Output 10</output>
+    </bluetooth>
+  </input>
+  <views>
+    <view label="Accelerometer">
+      <graph label="acc x" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 1</input>
+      </graph>
+      <graph label="acc y" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 2</input>
+      </graph>
+      <graph label="acc z" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 3</input>
+      </graph>
+    </view>
+    <view label="Gyroscope">
+      <graph label="gyr x" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 4</input>
+      </graph>
+      <graph label="gyr y" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 5</input>
+      </graph>
+      <graph label="gyr z" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 6</input>
+      </graph>
+    </view>
+    <view label="Temperature">
+      <graph label="temperature" aspectRatio="2.5" color="ff7e22">
+        <input axis="x">Output 10</input>
+        <input axis="y">Output 7</input>
+      </graph>
+    </view>
+  </views>
+  <export>
+    <set name="Accelerometer">
+      <data name="acc x [LSB]">Output 1</data>
+      <data name="acc y [LSB]">Output 2</data>
+      <data name="acc z [LSB]">Output 3</data>
+    </set>
+    <set name="Gyroscope">
+      <data name="gyr x [LSB]">Output 4</data>
+      <data name="gyr y [LSB]">Output 5</data>
+      <data name="gyr z [LSB]">Output 6</data>
+    </set>
+    <set name="Temperature">
+      <data name="temp [LSB]">Output 7</data>
+    </set>
+    <set name="Sensor Time">
+      <data name="Sensor Time [LSB]">Output 10</data>
+    </set>
+  </export>
+</phyphox>
