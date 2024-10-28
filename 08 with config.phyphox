@@ -20,7 +20,7 @@
     <container size="2">byte_array</container>
   </data-containers>
   <input>
-    <bluetooth id="appboard31" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mtu="185" mode="notification">
+    <bluetooth id="appboard31" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification">
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian">fill_level</output>
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="16">acc_y</output>
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="16">acc_z</output>
@@ -93,11 +93,14 @@
         <input type="value">1</input>
         <output>config_button</output>
       </button>
+      <graph label="requested ODR" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">input_odr</input>
+      </graph>
     </view>
 
     <view label="Fill level">
       <graph label="fill level" aspectRatio="2.5" color="ff7e22">
-        <input axis="y">input_odr</input>
+        <input axis="y">fill_level</input>
       </graph>
     </view>
     <view label="Sensor Time">
@@ -137,7 +140,6 @@
     <append>
       <input clear="false">input_odr</input>
       <input clear="false">input_stream</input>
-      <input clear="false">input_duration</input>
       <output as="out">byte_array</output>
     </append>
     <if equal="true">
