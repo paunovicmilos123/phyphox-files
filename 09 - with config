@@ -1,0 +1,177 @@
+<phyphox xmlns="https://phyphox.org/xml" version="1.18">
+  <title>08 - Config</title>
+  <color>007600</color>
+  <category>AppBoard debug</category>
+  <description></description>
+  <data-containers>
+    <container size="0">acc_x</container>
+    <container size="0">acc_y</container>
+    <container size="0">acc_z</container>
+    <container size="0">gyr_x</container>
+    <container size="0">gyr_y</container>
+    <container size="0">gyr_z</container>
+    <container size="0">temp</container>
+    <container size="0">sens_time</container>
+    <container size="0">fill_level</container>
+    <container size="1" init="9">input_odr</container>
+    <container size="1">input_stream</container>
+    <container size="1">input_file_size</container>
+    <container size="1" init="0">config_button</container>
+    <container size="2">byte_array</container>
+  </data-containers>
+  <input>
+    <bluetooth id="appboard31" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mtu="185" mode="notification">
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian">fill_level</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="16">acc_y</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="16">acc_z</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="6" repeating="16">gyr_x</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="8" repeating="16">gyr_y</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="10" repeating="16">gyr_z</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="12" repeating="16">temp</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="14" repeating="16">sens_time</output>
+      <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="16" repeating="16">acc_x</output>
+    </bluetooth>
+  </input>
+  <output>
+    <bluetooth id="appboard31">
+      <input char="6e400002-b5a3-f393-e0a9-e50e24dcca9e" conversion="byteArray">byte_array</input>
+    </bluetooth>
+  </output>
+  <views>
+
+    <view label="config">
+      <info label="Choose desired output data rate">
+      </info>
+      <button label="100Hz">
+        <input type="value">8</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="200Hz">
+        <input type="value">9</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="400Hz">
+        <input type="value">10</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="800Hz">
+        <input type="value">11</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="1.6kHz">
+        <input type="value">12</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="3.2kHz">
+        <input type="value">13</input>
+        <output>input_odr</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="streaming OFF">
+        <input type="value">0</input>
+        <output>input_stream</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <button label="streamin ON">
+        <input type="value">1</input>
+        <output>input_stream</output>
+        <input type="value">1</input>
+        <output>config_button</output>
+      </button>
+      <graph label="fill level" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">fill_level</input>
+      </graph>
+    </view>
+
+    <view label="Fill level">
+      <graph label="fill level" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">fill_level</input>
+      </graph>
+    </view>
+    <view label="Sensor Time">
+      <graph label="sensor time" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">sens_time</input>
+      </graph>
+    </view>
+    <view label="Accelerometer">
+      <graph label="acc x" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">acc_x</input>
+      </graph>
+      <graph label="acc y" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">acc_y</input>
+      </graph>
+      <graph label="acc z" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">acc_z</input>
+      </graph>
+    </view>
+    <view label="Gyroscope">
+      <graph label="gyr x" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">gyr_x</input>
+      </graph>
+      <graph label="gyr y" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">gyr_y</input>
+      </graph>
+      <graph label="gyr z" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">gyr_z</input>
+      </graph>
+    </view>
+    <view label="Temperature">
+      <graph label="temperature" aspectRatio="2.5" color="ff7e22">
+        <input axis="y">temp</input>
+      </graph>
+    </view>
+  </views>
+  <analysis sleep="0" onUserInput="false">
+    <append>
+      <input clear="false">input_odr</input>
+      <input clear="false">input_stream</input>
+      <output as="out">byte_array</output>
+    </append>
+    <if equal="true">
+      <input clear="false">config_button</input>
+      <input type="value">0</input>
+      <input type="empty" />
+      <output as="result" clear="true">byte_array</output>
+    </if>  
+    <append>
+      <input type="value">0</input>
+      <output as="out">config_button</output>
+    </append>      
+  </analysis>
+  <export>
+    <set name="Fill Level">
+      <data name="Fill Level [words]">fill_level</data>
+    </set>
+    <set name="Sensor Time">
+      <data name="sensor time [LSB]">sens_time</data>
+    </set>
+    <set name="Accelerometer">
+      <data name="acc x [LSB]">acc_x</data>
+      <data name="acc y [LSB]">acc_y</data>
+      <data name="acc z [LSB]">acc_z</data>
+    </set>
+    <set name="Gyroscope">
+      <data name="gyr x [LSB]">gyr_x</data>
+      <data name="gyr y [LSB]">gyr_y</data>
+      <data name="gyr z [LSB]">gyr_z</data>
+    </set>
+    <set name="Temperature">
+      <data name="temp [LSB]">temp</data>
+    </set>
+    <set name="Sensor Time">
+      <data name="Sensor Time [LSB]">sens_time</data>
+    </set>
+  </export>
+</phyphox>
