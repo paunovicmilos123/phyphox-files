@@ -20,7 +20,7 @@
     <container size="2">byte_array</container>
   </data-containers>
   <input>
-    <bluetooth id="appboard31" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mtu="185" mode="notification">
+    <bluetooth id="appboard31" uuid="6e400001-b5a3-f393-e0a9-e50e24dcca9e" subscribeOnStart="true" mode="notification">
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian">fill_level</output>
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="2" repeating="16">acc_y</output>
       <output char="6e400003-b5a3-f393-e0a9-e50e24dcca9e" conversion="int16LittleEndian" offset="4" repeating="16">acc_z</output>
